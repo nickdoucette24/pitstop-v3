@@ -1,0 +1,49 @@
+// @import "../base/global";
+
+// 🎨 SCSS Variables (For static values)
+// $primary-color: #ff1e00; // Ferrari Red
+// $secondary-color: #141414; // Dark Theme Background
+// $accent-color: #f7dd00; // Highlight Color
+// $neutral-light: #fcfcfc; // Light Mode Background
+// $neutral-dark: #363636; // Dark Mode Background
+// $text-light: #fcfcfc;
+// $text-dark: #363636;
+
+// 🔤 Typography
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Roboto", sans-serif;
+$font-size-base: 1rem;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// 📱 Breakpoints (For Responsive Design)
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1440px;
+
+// 🎨 Box Shadows
+$box-shadow-light: 0px 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-dark: 0px 4px 10px rgba(255, 255, 255, 0.1);
+
+// Theme Maps for Dark Mode & Light Mode
+$themes: (
+  "light": (
+    "base": var(--light-base),
+    "text": var(--dark-base),
+    "accent": var(--accent-yellow),
+    "button-bg-primary": var(--opaque-dark),
+    "button-bg-secondary": var(--accent-yellow),
+  ),
+  "dark": (
+    "base": var(--dark-base),
+    "text": var(--light-base),
+    "accent": var(--accent-yellow),
+    "button-bg-primary": var(--opaque-light),
+    "button-bg-secondary": var(--accent-yellow),
+  ),
+);

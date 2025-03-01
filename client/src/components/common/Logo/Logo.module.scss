@@ -1,0 +1,14 @@
+@use "../../../sass/partials/mixins" as *;
+
+.logo {
+  width: 8rem;
+  height: auto;
+
+  @include respond-to(xs) {
+    width: 9rem;
+  }
+
+  @include respond-to(sm) {
+    width: 10rem;
+  }
+}

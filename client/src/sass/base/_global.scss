@@ -1,0 +1,93 @@
+// @import "../partials/variables";
+// @import "../partials/mixins";
+// @import "../themes/dark";
+// @import "../themes/light";
+
+// Global Colours for dynamic theming
+:root {
+  --dark-base: #363636;
+  --dark-contrast: #fcfcfc;
+  --light-base: #fcfcfc;
+  --light-contrast: #363636;
+  --opaque-dark: #3636361c;
+  --opaque-light: #fcfcfc1c;
+  --accent-yellow: #f7dd00;
+}
+
+body {
+  // font-family: $font-primary;
+  // font-size: $font-size-base;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.light {
+  background-color: var(--light-base);
+  color: var(--dark-base);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dark {
+  background-color: var(--dark-base);
+  color: var(--light-base);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+// Layout Container
+// .app-container {
+//   display: flex;
+//   min-height: 100vh;
+//   background-color: var(--background);
+//   transition: background-color 0.3s ease-in-out;
+// }
+
+// Main Content Wrapper
+// .content {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   padding: $spacing-md;
+// }
+
+// Links
+// a {
+//   color: var(--primary-color);
+//   text-decoration: none;
+//   transition: color 0.3s ease;
+
+//   &:hover {
+//     color: darken($primary-color, 10%);
+//   }
+// }
+
+// Buttons
+// button {
+//   font-family: inherit;
+//   cursor: pointer;
+//   border: none;
+//   outline: none;
+// }
+
+// Images
+// img {
+//   max-width: 100%;
+//   height: auto;
+//   display: block;
+// }
+
+// // Dark Mode
+// .dark {
+//   // --opaque-background-light: #fcfcfc1c;
+//   background-color: var(--base-dark);
+//   color: var(--base-light);
+//   transition: background-color 0.3s ease, color 0.3s ease;
+// }
+
+// // Light Mode
+// .light {
+//   // --opaque-background-dark: #3636361c;
+//   background-color: var(--base-light);
+//   color: var(--base-dark);
+//   transition: background-color 0.3s ease, color 0.3s ease;
+// }

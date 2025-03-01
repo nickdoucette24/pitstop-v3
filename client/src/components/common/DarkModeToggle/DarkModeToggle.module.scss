@@ -1,0 +1,33 @@
+@use "../../../sass/partials/mixins" as *;
+@use "../../../sass/partials/variables" as vars;
+
+.themeSwitch {
+  border: none;
+  cursor: pointer;
+  @include flex-center;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(1.05);
+  }
+
+  &.light {
+    color: map-get(map-get(vars.$themes, "light"), "text");
+  }
+
+  &.dark {
+    color: map-get(map-get(vars.$themes, "dark"), "accent");
+  }
+}
+
+.icon {
+  transform: color 0.3s ease-in-out;
+}
