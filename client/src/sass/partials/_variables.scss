@@ -1,4 +1,4 @@
-// @import "../base/global";
+// @import "../base/typography";
 
 // 🎨 SCSS Variables (For static values)
 // $primary-color: #ff1e00; // Ferrari Red
@@ -10,7 +10,7 @@
 // $text-dark: #363636;
 
 // 🔤 Typography
-$font-primary: "Poppins", sans-serif;
+$font-primary: "Questrial";
 $font-secondary: "Roboto", sans-serif;
 $font-size-base: 1rem;
 $font-size-sm: 14px;
@@ -29,6 +29,7 @@ $breakpoint-xl: 1440px;
 // 🎨 Box Shadows
 $box-shadow-light: 0px 4px 6px rgba(0, 0, 0, 0.1);
 $box-shadow-dark: 0px 4px 10px rgba(255, 255, 255, 0.1);
+$button-shadow: rgba(165, 164, 149, 0.486) 0px 4px 12px;
 
 // Theme Maps for Dark Mode & Light Mode
 $themes: (
@@ -37,6 +38,7 @@ $themes: (
     "text": var(--dark-base),
     "accent": var(--accent-yellow),
     "button-bg-primary": var(--opaque-dark),
+    "button-bg-primary-hover": var(--opaque-dark-hover),
     "button-bg-secondary": var(--accent-yellow),
   ),
   "dark": (
@@ -44,6 +46,7 @@ $themes: (
     "text": var(--light-base),
     "accent": var(--accent-yellow),
     "button-bg-primary": var(--opaque-light),
+    "button-bg-primary-hover": var(--opaque-light-hover),
     "button-bg-secondary": var(--accent-yellow),
   ),
 );

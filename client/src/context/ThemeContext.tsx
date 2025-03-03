@@ -15,8 +15,15 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(
   undefined
 );
 
+const getInitialTheme = (): Theme => {
+  if (typeof window !== "undefined") {
+    return (localStorage.getItem("theme") as Theme) || "light";
+  }
+  return "light";
+};
+
 export const ThemeProvider = ({ children }: Props) => {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   // Load theme from localStorage after mount (Prevents SSR issues)
   useEffect(() => {
