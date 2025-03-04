@@ -1,0 +1,27 @@
+@use "../../sass/partials/variables" as vars;
+.sidenav {
+  border-radius: 0.3rem;
+  background-color: white;
+}
+
+.logo-container {
+  display: flex;
+}
+
+.light {
+  border: 1px solid var(--opaque-dark);
+  transition: border-color 0.3s ease-in-out;
+
+  &:hover {
+    border-color: var(--opaque-dark-hover);
+  }
+}
+
+.dark {
+  border: 1px solid var(--opaque-light);
+  transition: border-color 0.3s ease-in-out;
+
+  &:hover {
+    border-color: var(--opaque-light-hover);
+  }
+}
