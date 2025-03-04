@@ -8,9 +8,9 @@ type Props = {
 
 const DashNavExpand = ({ isExpanded }: Props) => {
   return (
-    <div>
+    <div className={styles["icon-container"]}>
       <IoIosArrowDropright
-        size={"1.75rem"}
+        size={"1.25rem"}
         className={`${styles["expand-icon"]} ${
           isExpanded ? styles["expanded"] : styles[""]
         }`}

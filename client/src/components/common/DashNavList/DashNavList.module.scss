@@ -4,14 +4,21 @@
 .navlist-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0rem;
+  align-items: center;
+
+  &.expanded {
+    align-items: flex-start;
+  }
 }
 
 .container {
   display: flex;
+  justify-content: center;
+  width: fit-content;
   border-radius: 0.5rem;
   border: 1px solid transparent;
   gap: 0.5rem;
+  min-height: 2.25rem;
   padding: 0.5rem;
   cursor: pointer;
   transition: transform 0.05s ease-in-out;
@@ -42,6 +49,9 @@
   }
 
   &.active {
+    width: 100%;
+    justify-content: flex-start;
+
     &.light {
       background-color: map-get(map-get(vars.$themes, "light"), "accent");
       color: map-get(map-get(vars.$themes, "light"), "base");

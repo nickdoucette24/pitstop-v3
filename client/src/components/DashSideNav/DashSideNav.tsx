@@ -44,8 +44,12 @@ const DashSideNav = () => {
           theme === "light" ? styles["light-divider"] : styles["dark-divider"]
         }`}
       />
-      <div className={styles["fantasy-container"]}>
-        <DashNavFantasy />
+      <div
+        className={`${styles["fantasy-container"]} ${
+          isExpanded ? styles["expanded"] : styles[""]
+        }`}
+      >
+        <DashNavFantasy theme={theme} isExpanded={isExpanded} />
       </div>
       <hr
         className={`${styles["divider"]} ${

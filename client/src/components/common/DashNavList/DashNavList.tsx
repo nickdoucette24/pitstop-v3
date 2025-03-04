@@ -16,7 +16,11 @@ const DashNavList = ({ theme, isExpanded }: Props) => {
   // const mappedNavList = NAVLIST_PRIMARY.map((item, index) =>)
 
   return (
-    <ul className={styles["navlist-wrapper"]}>
+    <ul
+      className={`${styles["navlist-wrapper"]} ${
+        isExpanded ? styles["expanded"] : styles[""]
+      }`}
+    >
       {NAVLIST_PRIMARY.map((item, index) => (
         <li
           key={index}
