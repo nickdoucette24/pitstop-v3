@@ -1,63 +1,104 @@
+import { useState } from "react";
 import { FaHouse, FaChartColumn, FaCalendarDays } from "react-icons/fa6";
 import { IoPodium, IoToday, IoAnalyticsSharp } from "react-icons/io5";
 import { FaPlayCircle } from "react-icons/fa";
 import styles from "./DashNavList.module.scss";
+import { NAVLIST_PRIMARY } from "../../../utils/constants";
 
 type Props = {
   theme: string;
+  isExpanded: boolean;
 };
+console.log(NAVLIST_PRIMARY);
+const DashNavList = ({ theme, isExpanded }: Props) => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-const DashNavList = ({ theme }: Props) => {
+  // const mappedNavList = NAVLIST_PRIMARY.map((item, index) =>)
+
   return (
     <ul className={styles["navlist-wrapper"]}>
-      <li
-        className={`${styles["container"]} ${
-          theme === "light" ? styles["light"] : styles["dark"]
-        }`}
-      >
-        <FaHouse className={styles["icon"]} />
-        <span className={styles["title"]}>Home</span>
-      </li>
-      <li
-        className={`${styles["container"]} ${
-          theme === "light" ? styles["light"] : styles["dark"]
-        }`}
-      >
-        <IoToday className={styles["icon"]} />
-        <span className={styles["title"]}>Current Race</span>
-      </li>
-      <li
-        className={`${styles["container"]} ${
-          theme === "light" ? styles["light"] : styles["dark"]
-        }`}
-      >
-        <FaCalendarDays className={styles["icon"]} />
-        <span className={styles["title"]}>Current Season</span>
-      </li>
-      <li
-        className={`${styles["container"]} ${
-          theme === "light" ? styles["light"] : styles["dark"]
-        }`}
-      >
-        <FaPlayCircle className={styles["icon"]} />
-        <span className={styles["title"]}>LIVE Tracker</span>
-      </li>
-      <li
-        className={`${styles["container"]} ${
-          theme === "light" ? styles["light"] : styles["dark"]
-        }`}
-      >
-        <IoPodium className={styles["icon"]} />
-        <span className={styles["title"]}>Standings</span>
-      </li>
-      <li
-        className={`${styles["container"]} ${
-          theme === "light" ? styles["light"] : styles["dark"]
-        }`}
-      >
-        <IoAnalyticsSharp className={styles["icon"]} />
-        <span className={styles["title"]}>Statistics</span>
-      </li>
+      {NAVLIST_PRIMARY.map((item, index) => (
+        <li
+          key={index}
+          className={`${styles["container"]} ${
+            theme === "light" ? styles["light"] : styles["dark"]
+          } ${selectedIndex === index ? styles["active"] : ""}`}
+          onClick={() => setSelectedIndex(index)}
+        >
+          {item === "Home" && (
+            <>
+              <FaHouse className={styles["icon"]} />
+              <span
+                className={`${styles["title"]} ${
+                  !isExpanded ? styles["shrunk"] : styles[""]
+                }`}
+              >
+                {item}
+              </span>
+            </>
+          )}
+          {item === "Current Race" && (
+            <>
+              <IoToday className={styles["icon"]} />
+              <span
+                className={`${styles["title"]} ${
+                  !isExpanded ? styles["shrunk"] : styles[""]
+                }`}
+              >
+                {item}
+              </span>
+            </>
+          )}
+          {item === "Current Season" && (
+            <>
+              <FaCalendarDays className={styles["icon"]} />
+              <span
+                className={`${styles["title"]} ${
+                  !isExpanded ? styles["shrunk"] : styles[""]
+                }`}
+              >
+                {item}
+              </span>
+            </>
+          )}
+          {item === "LIVE Tracker" && (
+            <>
+              <FaPlayCircle className={styles["icon"]} />
+              <span
+                className={`${styles["title"]} ${
+                  !isExpanded ? styles["shrunk"] : styles[""]
+                }`}
+              >
+                {item}
+              </span>
+            </>
+          )}
+          {item === "Standings" && (
+            <>
+              <IoPodium className={styles["icon"]} />
+              <span
+                className={`${styles["title"]} ${
+                  !isExpanded ? styles["shrunk"] : styles[""]
+                }`}
+              >
+                {item}
+              </span>
+            </>
+          )}
+          {item === "Statistics" && (
+            <>
+              <IoAnalyticsSharp className={styles["icon"]} />
+              <span
+                className={`${styles["title"]} ${
+                  !isExpanded ? styles["shrunk"] : styles[""]
+                }`}
+              >
+                {item}
+              </span>
+            </>
+          )}
+        </li>
+      ))}
     </ul>
   );
 };

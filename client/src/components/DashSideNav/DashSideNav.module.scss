@@ -1,14 +1,49 @@
 @use "../../sass/partials/variables" as vars;
+
 .sidenav {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   padding: 1rem;
 }
 
 .logo-container {
   display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.expand-button-light {
+  color: map-get(map-get(vars.$themes, "light"), "border-hover");
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: map-get(map-get(vars.$themes, "light"), "text");
+  }
+}
+
+.expand-button-dark {
+  color: map-get(map-get(vars.$themes, "dark"), "border-hover");
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: map-get(map-get(vars.$themes, "dark"), "text");
+  }
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.light-divider {
+  border-color: map-get(map-get(vars.$themes, "light"), "border-hover");
+}
+
+.dark-divider {
+  border-color: map-get(map-get(vars.$themes, "dark"), "border-hover");
 }
 
 .light {

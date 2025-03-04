@@ -1,9 +1,9 @@
-import React from "react";
+import styles from "./DashContent.module.scss";
 
 type Props = {};
 
 const DashContent = (props: Props) => {
-  return <div>DashContent</div>;
+  return <div className={styles["content"]}>DashContent</div>;
 };
 
 export default DashContent;

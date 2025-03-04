@@ -20,16 +20,38 @@ const DashSideNav = () => {
     >
       <div className={styles["logo-container"]}>
         <DashNavLogo isExpanded={isExpanded} />
-        <button onClick={() => setIsExpanded(!isExpanded)}>
-          <DashNavExpand />
+        <button
+          className={`${
+            theme === "light"
+              ? styles["expand-button-light"]
+              : styles["expand-button-dark"]
+          }`}
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          <DashNavExpand isExpanded={isExpanded} />
         </button>
       </div>
+      <hr
+        className={`${styles["divider"]} ${
+          theme === "light" ? styles["light-divider"] : styles["dark-divider"]
+        }`}
+      />
       <div className={styles["nav-container"]}>
-        <DashNavList theme={theme} />
+        <DashNavList isExpanded={isExpanded} theme={theme} />
       </div>
+      <hr
+        className={`${styles["divider"]} ${
+          theme === "light" ? styles["light-divider"] : styles["dark-divider"]
+        }`}
+      />
       <div className={styles["fantasy-container"]}>
         <DashNavFantasy />
       </div>
+      <hr
+        className={`${styles["divider"]} ${
+          theme === "light" ? styles["light-divider"] : styles["dark-divider"]
+        }`}
+      />
       <div className={styles["nav-container"]}>
         <DashNavSecondaryList />
       </div>
