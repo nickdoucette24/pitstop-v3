@@ -19,11 +19,13 @@ const DashSideNav = () => {
       }`}
     >
       <div className={styles["logo-container"]}>
-        <DashNavLogo />
-        <DashNavExpand />
+        <DashNavLogo isExpanded={isExpanded} />
+        <button onClick={() => setIsExpanded(!isExpanded)}>
+          <DashNavExpand />
+        </button>
       </div>
       <div className={styles["nav-container"]}>
-        <DashNavList />
+        <DashNavList theme={theme} />
       </div>
       <div className={styles["fantasy-container"]}>
         <DashNavFantasy />

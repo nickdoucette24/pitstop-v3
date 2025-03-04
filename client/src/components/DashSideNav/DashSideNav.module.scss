@@ -1,7 +1,10 @@
 @use "../../sass/partials/variables" as vars;
 .sidenav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   border-radius: 0.3rem;
-  background-color: white;
+  padding: 1rem;
 }
 
 .logo-container {
@@ -10,6 +13,7 @@
 
 .light {
   border: 1px solid var(--opaque-dark);
+  background-color: white;
   transition: border-color 0.3s ease-in-out;
 
   &:hover {

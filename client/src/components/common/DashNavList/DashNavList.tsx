@@ -1,35 +1,62 @@
 import { FaHouse, FaChartColumn, FaCalendarDays } from "react-icons/fa6";
 import { IoPodium, IoToday, IoAnalyticsSharp } from "react-icons/io5";
 import { FaPlayCircle } from "react-icons/fa";
+import styles from "./DashNavList.module.scss";
 
-type Props = {};
+type Props = {
+  theme: string;
+};
 
-const DashNavList = (props: Props) => {
+const DashNavList = ({ theme }: Props) => {
   return (
-    <ul>
-      <li>
-        <FaHouse />
-        Home
+    <ul className={styles["navlist-wrapper"]}>
+      <li
+        className={`${styles["container"]} ${
+          theme === "light" ? styles["light"] : styles["dark"]
+        }`}
+      >
+        <FaHouse className={styles["icon"]} />
+        <span className={styles["title"]}>Home</span>
       </li>
-      <li>
-        <IoToday />
-        Current Race
+      <li
+        className={`${styles["container"]} ${
+          theme === "light" ? styles["light"] : styles["dark"]
+        }`}
+      >
+        <IoToday className={styles["icon"]} />
+        <span className={styles["title"]}>Current Race</span>
       </li>
-      <li>
-        <FaCalendarDays />
-        Current Season
+      <li
+        className={`${styles["container"]} ${
+          theme === "light" ? styles["light"] : styles["dark"]
+        }`}
+      >
+        <FaCalendarDays className={styles["icon"]} />
+        <span className={styles["title"]}>Current Season</span>
       </li>
-      <li>
-        <FaPlayCircle />
-        LIVE Tracker
+      <li
+        className={`${styles["container"]} ${
+          theme === "light" ? styles["light"] : styles["dark"]
+        }`}
+      >
+        <FaPlayCircle className={styles["icon"]} />
+        <span className={styles["title"]}>LIVE Tracker</span>
       </li>
-      <li>
-        <IoPodium />
-        Standings
+      <li
+        className={`${styles["container"]} ${
+          theme === "light" ? styles["light"] : styles["dark"]
+        }`}
+      >
+        <IoPodium className={styles["icon"]} />
+        <span className={styles["title"]}>Standings</span>
       </li>
-      <li>
-        <IoAnalyticsSharp />
-        Statistics
+      <li
+        className={`${styles["container"]} ${
+          theme === "light" ? styles["light"] : styles["dark"]
+        }`}
+      >
+        <IoAnalyticsSharp className={styles["icon"]} />
+        <span className={styles["title"]}>Statistics</span>
       </li>
     </ul>
   );
