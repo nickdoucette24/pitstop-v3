@@ -5,14 +5,10 @@ import styles from "./DarkModeToggle.module.scss";
 const DarkModeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
-  // const darkModeBackground =
-  //   theme === "light" ? "var(--base-dark)" : "var(--accent-yellow)";
-
-  // const opaqueBackground = theme === "light" ? "lightOpaque" : "darkOpaque";
-
   return (
     <button
-      className={`${styles["themeSwitch"]} ${styles[theme]}`}
+      data-theme={theme}
+      className={styles["switch"]}
       onClick={toggleTheme}
       aria-label="Toggle dark mode"
     >

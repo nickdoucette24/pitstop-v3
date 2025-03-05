@@ -24,11 +24,10 @@ const DashNavList = ({ theme, isExpanded }: Props) => {
       {NAVLIST_PRIMARY.map((item, index) => (
         <li
           key={index}
+          data-theme={theme}
           className={`${styles["container"]} ${
-            theme === "light" ? styles["light"] : styles["dark"]
-          } ${selectedIndex === index ? styles["active"] : ""} ${
-            isExpanded === true ? styles["expanded"] : styles[""]
-          }`}
+            selectedIndex === index ? styles["active"] : ""
+          } ${isExpanded === true ? styles["expanded"] : styles[""]}`}
           onClick={() => setSelectedIndex(index)}
         >
           {item === "Home" && (

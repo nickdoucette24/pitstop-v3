@@ -21,7 +21,7 @@ const Header = () => {
   const menuIconColor = useGetThemeColor(theme, "contrast");
 
   return (
-    <header className={styles["header"]} role="banner">
+    <header data-theme={theme} className={styles["header"]} role="banner">
       <div className={styles["header__content"]}>
         <button
           className={styles["header__mobileMenu"]}

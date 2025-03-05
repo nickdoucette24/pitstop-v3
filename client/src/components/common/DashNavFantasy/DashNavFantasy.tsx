@@ -11,9 +11,8 @@ const DashNavFantasy = ({ theme, isExpanded }: Props) => {
   return (
     <div
       // to={"/fantasy"}
-      className={`${styles["fantasy-tab"]} ${
-        theme === "light" ? styles["light"] : styles["dark"]
-      }`}
+      data-theme={theme}
+      className={styles["fantasy-tab"]}
     >
       <FaTrophy className={styles["icon"]} />
       <span

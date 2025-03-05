@@ -1,62 +1,5 @@
 @use "../../sass/partials/variables" as vars;
 
-.sidenav {
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.5rem;
-  padding: 1rem;
-}
-
-.logo-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 3.5rem;
-}
-
-.fantasy-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &.expanded {
-    flex-direction: row;
-  }
-}
-
-.expand-button-light {
-  color: map-get(map-get(vars.$themes, "light"), "border-hover");
-  transition: color 0.2s ease-in-out;
-
-  &:hover {
-    color: map-get(map-get(vars.$themes, "light"), "text");
-  }
-}
-
-.expand-button-dark {
-  color: map-get(map-get(vars.$themes, "dark"), "border-hover");
-  transition: color 0.2s ease-in-out;
-
-  &:hover {
-    color: map-get(map-get(vars.$themes, "dark"), "text");
-  }
-}
-
-.divider {
-  border: none;
-  border-top: 1px solid transparent;
-  margin: 0.5rem 0 1rem 0;
-  transition: border-color 0.3s ease-in-out;
-}
-
-.light-divider {
-  border-color: map-get(map-get(vars.$themes, "light"), "border-hover");
-}
-
-.dark-divider {
-  border-color: map-get(map-get(vars.$themes, "dark"), "border-hover");
-}
-
 .light {
   border: 1px solid var(--opaque-dark);
   background-color: white;
@@ -74,4 +17,67 @@
   &:hover {
     border-color: var(--opaque-light-hover);
   }
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 5rem;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease-in-out;
+  background-color: var(--base);
+
+  &:hover {
+    border-color: var(--border-hover);
+  }
+
+  &.expanded {
+    width: 15.5rem;
+    transition: width 0.2s ease-in-out;
+  }
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.5rem;
+
+  &.expanded {
+    align-items: flex-start;
+    gap: 1rem;
+    min-height: 5.5rem;
+    transition: min-height 0.2s ease-in-out;
+  }
+}
+
+.fantasy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.expanded {
+    flex-direction: row;
+  }
+}
+
+.expand-button {
+  color: var(--border-hover);
+  background-color: var(--border);
+  border-radius: 1.5rem;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--contrast);
+  }
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid transparent;
+  margin: 0.5rem 0 1rem 0;
+  transition: border-color 0.3s ease-in-out;
+  border-color: var(--border-hover);
 }

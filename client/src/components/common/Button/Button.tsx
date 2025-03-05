@@ -11,16 +11,16 @@ type ButtonProps = {
 const Button = ({ linkTo, text, variant }: ButtonProps) => {
   const { theme } = useTheme();
 
-  const buttonClass = `${styles["button"]} ${styles[variant]} ${
-    theme === "dark" ? styles["dark"] : styles["light"]
-  }`;
+  const buttonClass = `${styles["button"]} ${styles[variant]}`;
 
   return linkTo ? (
-    <Link to={linkTo} className={buttonClass}>
+    <Link to={linkTo} data-theme={theme} className={buttonClass}>
       {text}
     </Link>
   ) : (
-    <button className={buttonClass}>{text}</button>
+    <button data-theme={theme} className={buttonClass}>
+      {text}
+    </button>
   );
 };
 

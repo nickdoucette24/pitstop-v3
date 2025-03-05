@@ -10,46 +10,25 @@
   gap: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
-  transition: transform 0.05s ease-in-out;
   text-decoration: none;
+  background-color: var(--fantasy-red-opaque);
+  color: var(--fantasy-red);
+  transition: transform 0.05s ease-in-outbackground-color 0.05s ease,
+    color 0.05s ease;
 
   &:active {
     transform: scale(0.985);
   }
 
-  &.light {
-    transition: background-color 0.05s ease, color 0.05s ease;
-    color: var(--fantasy-red);
-    background-color: var(--fantasy-red-opaque);
-
-    &:hover {
-      background-color: var(--fantasy-red);
-      color: map-get(map-get(vars.$themes, "light"), "base");
-    }
-  }
-
-  &.dark {
-    transition: background-color 0.05s ease-in-out, color 0.05s ease-in-out;
-    color: map-get(map-get(vars.$themes, "light"), "text");
-
-    &:hover {
-      background-color: map-get(map-get(vars.$themes, "dark"), "accent-opaque");
-      color: map-get(map-get(vars.$themes, "dark"), "accent");
-    }
+  &:hover {
+    background-color: var(--fantasy-red);
+    color: var(--base);
   }
 
   &.active {
     width: 100%;
-
-    &.light {
-      background-color: map-get(map-get(vars.$themes, "light"), "accent");
-      color: map-get(map-get(vars.$themes, "light"), "base");
-    }
-
-    &.dark {
-      background-color: map-get(map-get(vars.$themes, "dark"), "accent");
-      color: map-get(map-get(vars.$themes, "dark"), "base");
-    }
+    background-color: var(--accent);
+    color: var(--base);
   }
 }
 
@@ -57,14 +36,7 @@
   letter-spacing: 0.06rem;
   line-height: 1.175rem;
   font-size: 1.1rem;
-
-  &.light {
-    color: map-get(map-get(vars.$themes, "light"), "text");
-  }
-
-  &.dark {
-    color: map-get(map-get(vars.$themes, "dark"), "text");
-  }
+  color: var(--text);
 
   &.shrunk {
     display: none;

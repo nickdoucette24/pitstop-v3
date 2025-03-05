@@ -5,9 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
 
   &.expanded {
     align-items: flex-start;
+    gap: 0;
+    width: 100%;
   }
 }
 
@@ -21,45 +24,22 @@
   min-height: 2.25rem;
   padding: 0.5rem;
   cursor: pointer;
-  transition: transform 0.05s ease-in-out;
+  transition: transform 0.05s ease-in-out, background-color 0.5s ease-in-out,
+    color 0.05s ease-in-out;
+
+  &:hover {
+    background-color: var(--accent-opaque);
+    color: var(--accent);
+  }
 
   &:active {
     transform: scale(0.985);
   }
 
-  &.light {
-    transition: background-color 0.05s ease-in-out, color 0.05s ease-in-out;
-
-    &:hover {
-      background-color: map-get(
-        map-get(vars.$themes, "light"),
-        "accent-opaque"
-      );
-      color: map-get(map-get(vars.$themes, "light"), "accent");
-    }
-  }
-
-  &.dark {
-    transition: background-color 0.05s ease-in-out, color 0.05s ease-in-out;
-
-    &:hover {
-      background-color: map-get(map-get(vars.$themes, "dark"), "accent-opaque");
-      color: map-get(map-get(vars.$themes, "dark"), "accent");
-    }
-  }
-
   &.active {
     width: fit-content;
-
-    &.light {
-      background-color: map-get(map-get(vars.$themes, "light"), "accent");
-      color: map-get(map-get(vars.$themes, "light"), "base");
-    }
-
-    &.dark {
-      background-color: map-get(map-get(vars.$themes, "dark"), "accent");
-      color: map-get(map-get(vars.$themes, "dark"), "base");
-    }
+    background-color: var(--accent);
+    color: var(--base);
   }
 
   &.expanded {

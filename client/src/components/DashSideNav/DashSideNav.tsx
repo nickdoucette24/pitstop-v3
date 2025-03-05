@@ -14,18 +14,20 @@ const DashSideNav = () => {
 
   return (
     <nav
+      data-theme={theme}
       className={`${styles["sidenav"]} ${
-        theme === "light" ? styles["light"] : styles["dark"]
+        isExpanded ? styles["expanded"] : styles[""]
       }`}
     >
-      <div className={styles["logo-container"]}>
+      <div
+        className={`${styles["logo-container"]} ${
+          isExpanded ? styles["expanded"] : styles[""]
+        }`}
+      >
         <DashNavLogo isExpanded={isExpanded} />
         <button
-          className={`${
-            theme === "light"
-              ? styles["expand-button-light"]
-              : styles["expand-button-dark"]
-          }`}
+          data-theme={theme}
+          className={styles["expand-button"]}
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <DashNavExpand isExpanded={isExpanded} />

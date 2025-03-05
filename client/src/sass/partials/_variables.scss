@@ -1,58 +1,73 @@
-// @import "../base/typography";
-
-// 🎨 SCSS Variables (For static values)
-// $primary-color: #ff1e00; // Ferrari Red
-// $secondary-color: #141414; // Dark Theme Background
-// $accent-color: #f7dd00; // Highlight Color
-// $neutral-light: #fcfcfc; // Light Mode Background
-// $neutral-dark: #363636; // Dark Mode Background
-// $text-light: #fcfcfc;
-// $text-dark: #363636;
-
-// 🔤 Typography
+// Typography
 $font-primary: "Questrial";
-$font-secondary: "Roboto", sans-serif;
-$font-size-base: 1rem;
-$font-size-sm: 14px;
-$font-size-lg: 18px;
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-bold: 700;
 
-// 📱 Breakpoints (For Responsive Design)
+// Breakpoints
 $breakpoint-xs: 480px;
 $breakpoint-sm: 768px;
 $breakpoint-md: 1024px;
 $breakpoint-lg: 1280px;
 $breakpoint-xl: 1440px;
 
-// 🎨 Box Shadows
+// Box Shadows
 $box-shadow-light: 0px 4px 6px rgba(0, 0, 0, 0.1);
 $box-shadow-dark: 0px 4px 10px rgba(255, 255, 255, 0.1);
 $button-shadow: rgba(165, 164, 149, 0.486) 0px 4px 12px;
 
-// Theme Maps for Dark Mode & Light Mode
-$themes: (
-  "light": (
-    "base": var(--light-base),
-    "text": var(--dark-base),
-    "accent": var(--accent-blue),
-    "accent-opaque": var(--accent-blue-opaque),
-    "border": var(--opaque-dark),
-    "border-hover": var(--opaque-dark-hover),
-    "button-bg-primary": var(--opaque-dark),
-    "button-bg-primary-hover": var(--opaque-dark-hover),
-    "button-bg-secondary": var(--accent-blue),
-  ),
-  "dark": (
-    "base": var(--dark-base),
-    "text": var(--light-base),
-    "accent": var(--accent-yellow),
-    "accent-opaque": var(--accent-yellow-opaque),
-    "border": var(--opaque-light),
-    "border-hover": var(--opaque-light-hover),
-    "button-bg-primary": var(--opaque-light),
-    "button-bg-primary-hover": var(--opaque-light-hover),
-    "button-bg-secondary": var(--accent-yellow),
-  ),
-);
+// Global Colours for Dynamic Theming
+:root {
+  // Core Colors
+  --dark-base: #363636;
+  --dark-contrast: #fcfcfc;
+  --light-base: #fcfcfc;
+  --light-contrast: #363636;
+
+  // Opaque Variants
+  --opaque-dark: #3636361c;
+  --opaque-dark-hover: #3636362e;
+  --opaque-light: #fcfcfc1c;
+  --opaque-light-hover: #fcfcfc2e;
+
+  // Accent Colors
+  --accent-yellow: #f7dd00;
+  --accent-yellow-opaque: #f7de0045;
+  --accent-blue: #0084f7;
+  --accent-blue-opaque: #0084f745;
+  --fantasy-red: #d00000;
+  --fantasy-red-opaque: #d000002e;
+
+  // Default Theme (Light Mode)
+  --base: var(--light-base);
+  --text: var(--dark-base);
+  --contrast: var(--light-contrast);
+  --border: var(--opaque-dark);
+  --border-hover: var(--opaque-dark-hover);
+  --button-bg-primary: var(--opaque-dark);
+  --button-bg-primary-hover: var(--opaque-dark-hover);
+  --button-bg-secondary: var(--accent-blue);
+}
+
+[data-theme="light"] {
+  --base: var(--light-base);
+  --text: var(--dark-base);
+  --contrast: var(--light-contrast);
+  --accent: var(--accent-blue);
+  --accent-opaque: var(--accent-blue-opaque);
+  --border: var(--opaque-dark);
+  --border-hover: var(--opaque-dark-hover);
+  --button-bg-primary: var(--opaque-dark);
+  --button-bg-primary-hover: var(--opaque-dark-hover);
+  --button-bg-secondary: var(--accent-blue);
+}
+
+[data-theme="dark"] {
+  --base: var(--dark-base);
+  --text: var(--light-base);
+  --contrast: var(--dark-contrast);
+  --accent: var(--accent-yellow);
+  --accent-opaque: var(--accent-yellow-opaque);
+  --border: var(--opaque-light);
+  --border-hover: var(--opaque-light-hover);
+  --button-bg-primary: var(--opaque-light);
+  --button-bg-primary-hover: var(--opaque-light-hover);
+  --button-bg-secondary: var(--accent-yellow);
+}

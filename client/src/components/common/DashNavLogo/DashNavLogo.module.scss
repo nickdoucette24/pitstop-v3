@@ -1,8 +1,23 @@
-.logo-small {
-  width: 1.5rem;
-  margin-left: 0.25rem;
+@use "../../../sass/partials/variables" as vars;
+@use "../../../sass/partials/mixins" as *;
+
+.logo {
+  width: 0;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.75s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.logo-large {
-  width: 6rem;
+.expanded {
+  width: 8rem;
+  opacity: 1;
+  transform: scale(1);
+
+  @include respond-to(xs) {
+    width: 9rem;
+  }
+
+  @include respond-to(sm) {
+    width: 10rem;
+  }
 }
