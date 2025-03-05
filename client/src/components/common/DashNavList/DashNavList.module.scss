@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   width: fit-content;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   border: 1px solid transparent;
   gap: 0.5rem;
   min-height: 2.25rem;
@@ -49,8 +49,7 @@
   }
 
   &.active {
-    width: 100%;
-    justify-content: flex-start;
+    width: fit-content;
 
     &.light {
       background-color: map-get(map-get(vars.$themes, "light"), "accent");
@@ -62,12 +61,18 @@
       color: map-get(map-get(vars.$themes, "dark"), "base");
     }
   }
+
+  &.expanded {
+    align-items: flex-end;
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 
 .title {
   letter-spacing: 0.06rem;
   line-height: 1.175rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.125rem;
 
   &.shrunk {
     display: none;
@@ -76,4 +81,11 @@
 
 .icon {
   @include flex-center;
+  width: 1.75rem;
+  transition: width 0.2s ease-in-out;
+
+  &.expanded {
+    transition: width 0.2s ease-in-out;
+    width: 1.5rem;
+  }
 }

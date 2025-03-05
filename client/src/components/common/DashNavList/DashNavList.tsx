@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { FaHouse, FaChartColumn, FaCalendarDays } from "react-icons/fa6";
+import { FaHouse } from "react-icons/fa6";
+import { FaCalendarAlt } from "react-icons/fa";
 import { IoPodium, IoToday, IoAnalyticsSharp } from "react-icons/io5";
 import { FaPlayCircle } from "react-icons/fa";
 import styles from "./DashNavList.module.scss";
 import { NAVLIST_PRIMARY } from "../../../utils/constants";
+import { DASHNAV_ICON_MOBILE } from "../../../utils/constants";
 
 type Props = {
   theme: string;
   isExpanded: boolean;
 };
-console.log(NAVLIST_PRIMARY);
+
 const DashNavList = ({ theme, isExpanded }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
-  // const mappedNavList = NAVLIST_PRIMARY.map((item, index) =>)
 
   return (
     <ul
@@ -26,12 +26,19 @@ const DashNavList = ({ theme, isExpanded }: Props) => {
           key={index}
           className={`${styles["container"]} ${
             theme === "light" ? styles["light"] : styles["dark"]
-          } ${selectedIndex === index ? styles["active"] : ""}`}
+          } ${selectedIndex === index ? styles["active"] : ""} ${
+            isExpanded === true ? styles["expanded"] : styles[""]
+          }`}
           onClick={() => setSelectedIndex(index)}
         >
           {item === "Home" && (
             <>
-              <FaHouse className={styles["icon"]} />
+              <FaHouse
+                className={`${styles["icon"]} ${
+                  isExpanded ? styles["expanded"] : styles[""]
+                }`}
+                size={DASHNAV_ICON_MOBILE}
+              />
               <span
                 className={`${styles["title"]} ${
                   !isExpanded ? styles["shrunk"] : styles[""]
@@ -43,7 +50,12 @@ const DashNavList = ({ theme, isExpanded }: Props) => {
           )}
           {item === "Current Race" && (
             <>
-              <IoToday className={styles["icon"]} />
+              <IoToday
+                className={`${styles["icon"]} ${
+                  isExpanded ? styles["expanded"] : styles[""]
+                }`}
+                size={DASHNAV_ICON_MOBILE}
+              />
               <span
                 className={`${styles["title"]} ${
                   !isExpanded ? styles["shrunk"] : styles[""]
@@ -55,7 +67,12 @@ const DashNavList = ({ theme, isExpanded }: Props) => {
           )}
           {item === "Current Season" && (
             <>
-              <FaCalendarDays className={styles["icon"]} />
+              <FaCalendarAlt
+                className={`${styles["icon"]} ${
+                  isExpanded ? styles["expanded"] : styles[""]
+                }`}
+                size={isExpanded ? "1.5rem" : "1.75rem"}
+              />
               <span
                 className={`${styles["title"]} ${
                   !isExpanded ? styles["shrunk"] : styles[""]
@@ -67,7 +84,12 @@ const DashNavList = ({ theme, isExpanded }: Props) => {
           )}
           {item === "LIVE Tracker" && (
             <>
-              <FaPlayCircle className={styles["icon"]} />
+              <FaPlayCircle
+                className={`${styles["icon"]} ${
+                  isExpanded ? styles["expanded"] : styles[""]
+                }`}
+                size={DASHNAV_ICON_MOBILE}
+              />
               <span
                 className={`${styles["title"]} ${
                   !isExpanded ? styles["shrunk"] : styles[""]
@@ -79,7 +101,12 @@ const DashNavList = ({ theme, isExpanded }: Props) => {
           )}
           {item === "Standings" && (
             <>
-              <IoPodium className={styles["icon"]} />
+              <IoPodium
+                className={`${styles["icon"]} ${
+                  isExpanded ? styles["expanded"] : styles[""]
+                }`}
+                size={DASHNAV_ICON_MOBILE}
+              />
               <span
                 className={`${styles["title"]} ${
                   !isExpanded ? styles["shrunk"] : styles[""]
@@ -91,7 +118,12 @@ const DashNavList = ({ theme, isExpanded }: Props) => {
           )}
           {item === "Statistics" && (
             <>
-              <IoAnalyticsSharp className={styles["icon"]} />
+              <IoAnalyticsSharp
+                className={`${styles["icon"]} ${
+                  isExpanded ? styles["expanded"] : styles[""]
+                }`}
+                size={DASHNAV_ICON_MOBILE}
+              />
               <span
                 className={`${styles["title"]} ${
                   !isExpanded ? styles["shrunk"] : styles[""]

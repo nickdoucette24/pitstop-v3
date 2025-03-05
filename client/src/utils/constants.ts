@@ -6,3 +6,5 @@ export const NAVLIST_PRIMARY = [
   "Standings",
   "Statistics",
 ];
+
+export const DASHNAV_ICON_MOBILE = "1.75rem";
