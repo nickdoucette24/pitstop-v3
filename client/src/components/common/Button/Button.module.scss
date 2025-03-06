@@ -22,7 +22,7 @@
 // Primary Button
 .primary {
   transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  color: var(--base);
+  color: var(--text);
 
   &:hover {
     transform: scale(1.02);

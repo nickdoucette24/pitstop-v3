@@ -12,6 +12,7 @@
   min-height: 3rem;
   background-color: var(--base);
   color: var(--text);
+  transition: background-color 0.3s ease-in-out;
 
   @include respond-to(xs) {
     padding: 2rem 1.5rem;

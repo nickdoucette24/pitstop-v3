@@ -17,12 +17,18 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(
 );
 
 export const ThemeProvider = ({ children }: Props) => {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(() => {
+    return localStorage.getItem("theme") as Theme;
+  });
 
   // Load theme from localStorage after mount (Prevents SSR issues)
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme") as Theme | "light";
-    setTheme(storedTheme);
+    if (storedTheme !== null) {
+      setTheme(storedTheme);
+    } else {
+      setTheme("light");
+    }
   }, []);
 
   // Apply theme to document & store it in localStorage

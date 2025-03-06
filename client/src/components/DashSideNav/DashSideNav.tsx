@@ -10,6 +10,7 @@ import DashNavTools from "../common/DashNavTools/DashNavTools";
 
 const DashSideNav = () => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const { theme } = useTheme();
 
   return (
@@ -33,36 +34,39 @@ const DashSideNav = () => {
           <DashNavExpand isExpanded={isExpanded} />
         </button>
       </div>
-      <hr
-        className={`${styles["divider"]} ${
-          theme === "light" ? styles["light-divider"] : styles["dark-divider"]
-        }`}
-      />
+      <hr className={styles["divider"]} />
       <div className={styles["nav-container"]}>
-        <DashNavList isExpanded={isExpanded} theme={theme} />
+        <DashNavList
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+          isExpanded={isExpanded}
+          theme={theme}
+        />
       </div>
-      <hr
-        className={`${styles["divider"]} ${
-          theme === "light" ? styles["light-divider"] : styles["dark-divider"]
-        }`}
-      />
+      <hr className={styles["divider"]} />
       <div
         className={`${styles["fantasy-container"]} ${
           isExpanded ? styles["expanded"] : styles[""]
         }`}
       >
-        <DashNavFantasy theme={theme} isExpanded={isExpanded} />
+        <DashNavFantasy
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+          theme={theme}
+          isExpanded={isExpanded}
+        />
       </div>
-      <hr
-        className={`${styles["divider"]} ${
-          theme === "light" ? styles["light-divider"] : styles["dark-divider"]
-        }`}
-      />
+      <hr className={styles["divider"]} />
       <div className={styles["nav-container"]}>
-        <DashNavSecondaryList />
+        <DashNavSecondaryList
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+          theme={theme}
+          isExpanded={isExpanded}
+        />
       </div>
       <div className={styles["tools-container"]}>
-        <DashNavTools />
+        <DashNavTools theme={theme} isExpanded={isExpanded} />
       </div>
     </nav>
   );
