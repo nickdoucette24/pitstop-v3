@@ -1,3 +1,29 @@
+@use "../../sass/partials/mixins" as *;
+
 .content {
-  flex-grow: 1;
+  flex: 1;
+  display: flex;
+
+  &__container {
+    display: flex;
+    margin: 0 1rem;
+    flex: 1;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+  }
+
+  &__aside-wrapper {
+    @include flex-center;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+  }
 }
