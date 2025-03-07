@@ -1,1 +1,26 @@
 @import "../../sass/base/global";
+
+.widget-container {
+  background-color: var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.125s ease-in-out;
+
+  &:hover {
+    background-color: var(--border-hover);
+  }
+}
+
+.widget-content {
+  margin: 0 0.25rem 0.25rem 0.25rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background-color: var(--border-hover);
+  display: flex;
+}
+
+.switch-container {
+  align-self: flex-end;
+  margin: 0.25rem 0.5rem;
+}
