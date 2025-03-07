@@ -1,6 +1,7 @@
 import DashStandings from "../common/DashStandings/DashStandings";
 import DashTitle from "../common/DashTitle/DashTitle";
 import DashAside from "../DashAside/DashAside";
+import DashAsideMobile from "../DashAsideMobile/DashAsideMobile";
 import DashGraphs from "../DashGraphs/DashGraphs";
 import DashWidgetBottom from "../DashWidgetBottom/DashWidgetBottom";
 import DashWidgetMiddle from "../DashWidgetMiddle/DashWidgetMiddle";
@@ -15,6 +16,9 @@ const DashContent = () => (
       <div className={styles["content__group"]}>
         <DashTitle />
         <DashWidgetTop />
+        <div className={styles["mobile-aside"]}>
+          <DashAsideMobile />
+        </div>
       </div>
       <div className={styles["content__group"]}>
         <DashGraphs />

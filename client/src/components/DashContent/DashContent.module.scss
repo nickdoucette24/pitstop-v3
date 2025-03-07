@@ -3,6 +3,13 @@
 .content {
   flex: 1;
   display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+  z-index: -1;
+
+  @include respond-to(sm) {
+    flex-direction: row;
+  }
 
   &__container {
     display: flex;
@@ -14,9 +21,14 @@
   }
 
   &__aside-wrapper {
-    @include flex-center;
-    border: 1px solid white;
-    border-radius: 0.5rem;
+    display: none;
+
+    @include respond-to(sm) {
+      @include flex-center;
+      margin: 1rem;
+      border: 1px solid white;
+      border-radius: 0.5rem;
+    }
   }
 
   &__group {
@@ -25,5 +37,11 @@
     justify-content: space-between;
     border-radius: 0.5rem;
     border: 1px solid white;
+  }
+}
+
+.mobile-aside {
+  @include respond-to(sm) {
+    display: none;
   }
 }
