@@ -1,9 +1,15 @@
-import React from "react";
+import styles from "./DashWidgetTop.module.scss";
 
-type Props = {};
+type Props = {
+  theme: string;
+};
 
-const DashWidgetTop = (props: Props) => {
-  return <div>DashWidgetTop</div>;
+const DashWidgetTop = ({ theme }: Props) => {
+  return (
+    <div data-theme={theme} className={styles["widget-container"]}>
+      <h4>Weather</h4>
+    </div>
+  );
 };
 
 export default DashWidgetTop;
