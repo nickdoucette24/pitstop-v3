@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+
 export type Theme = "light" | "dark";
 
 type ThemeContextType = {
@@ -15,26 +16,24 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(
   undefined
 );
 
-const getInitialTheme = (): Theme => {
-  if (typeof window !== "undefined") {
-    return (localStorage.getItem("theme") as Theme) || "light";
-  }
-  return "light";
-};
-
 export const ThemeProvider = ({ children }: Props) => {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [theme, setTheme] = useState<Theme>(() => {
+    return localStorage.getItem("theme") as Theme;
+  });
 
   // Load theme from localStorage after mount (Prevents SSR issues)
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") as Theme | null;
-    if (storedTheme) setTheme(storedTheme);
+    const storedTheme = localStorage.getItem("theme") as Theme | "light";
+    if (storedTheme !== null) {
+      setTheme(storedTheme);
+    } else {
+      setTheme("light");
+    }
   }, []);
 
   // Apply theme to document & store it in localStorage
   useEffect(() => {
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(theme);
+    document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 

@@ -1,0 +1,12 @@
+@use "../../../sass/partials/mixins" as *;
+
+.widget-switch {
+  cursor: pointer;
+  @include flex-center;
+  color: var(--accent-opaque);
+  transition: color 0.125s ease-in-out;
+
+  &:hover {
+    color: var(--accent);
+  }
+}

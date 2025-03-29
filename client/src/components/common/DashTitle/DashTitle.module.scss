@@ -1,0 +1,15 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__heading {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,7 +1,7 @@
 @use "../../../sass/partials/mixins" as *;
 @use "../../../sass/partials/variables" as vars;
 
-.themeSwitch {
+.switch {
   border: none;
   cursor: pointer;
   @include flex-center;
@@ -10,6 +10,8 @@
   box-sizing: border-box;
   padding: 0.25rem;
   transition: transform 0.2s ease-in-out;
+  color: var(--text);
+  background-color: var(--button-bg-primary);
 
   &:hover {
     transform: scale(1.1);
@@ -17,22 +19,6 @@
 
   &:active {
     transform: scale(1.05);
-  }
-
-  &.light {
-    color: map-get(map-get(vars.$themes, "light"), "text");
-    background-color: map-get(
-      map-get(vars.$themes, "light"),
-      "button-bg-primary"
-    );
-  }
-
-  &.dark {
-    color: map-get(map-get(vars.$themes, "dark"), "text");
-    background-color: map-get(
-      map-get(vars.$themes, "dark"),
-      "button-bg-primary"
-    );
   }
 }
 

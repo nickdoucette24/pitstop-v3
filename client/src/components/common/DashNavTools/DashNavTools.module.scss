@@ -1,0 +1,45 @@
+@use "../../../sass/partials/mixins" as *;
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tools-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 3rem;
+
+  &.expanded {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 0;
+  }
+}
+
+.settings-icon {
+  @include flex-center;
+  width: 1.75rem;
+  align-items: center;
+  cursor: pointer;
+  transition: width 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  &.expanded {
+    width: 1.5rem;
+    transition: width 0.2s ease-in-out;
+  }
+
+  &:hover {
+    animation: spin 4s linear infinite;
+  }
+
+  &:active {
+    width: 1.4rem;
+  }
+}

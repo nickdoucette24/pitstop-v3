@@ -1,9 +1,14 @@
-import React from "react";
+import DashSideNav from "../../components/DashSideNav/DashSideNav";
+import DashContent from "../../components/DashContent/DashContent";
+import styles from "./HomeDashboard.module.scss";
 
-type Props = {};
-
-const HomeDashboard = (props: Props) => {
-  return <div>HomeDashboard</div>;
+const HomeDashboard = () => {
+  return (
+    <div className={styles["dashboard"]}>
+      <DashSideNav />
+      <DashContent />
+    </div>
+  );
 };
 
 export default HomeDashboard;

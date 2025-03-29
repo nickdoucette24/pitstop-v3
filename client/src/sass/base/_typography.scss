@@ -12,7 +12,7 @@
 // Base Font Styles
 body {
   font-family: $font-primary;
-  font-size: $font-size-base;
+  font-size: 1rem;
   //   line-height: 1.6;
   color: var(--text);
 }
@@ -73,19 +73,18 @@ h5 {
 
 h6 {
   font-size: 1rem;
-  font-weight: $font-weight-regular;
 }
 
 // Paragraphs
 p {
-  font-size: $font-size-base;
+  font-size: 1rem;
   //   margin-bottom: $spacing-sm;
 }
 
 // Strong/Bold Text
-strong {
-  font-weight: $font-weight-bold;
-}
+// strong {
+//   font-weight: $font-weight;
+// }
 
 // Italics
 // em {

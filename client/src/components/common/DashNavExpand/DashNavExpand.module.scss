@@ -1,0 +1,17 @@
+@use "../../../sass/partials/variables" as vars;
+
+.expand-icon {
+  transition: rotate 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.expanded {
+  rotate: 180deg;
+  transition: rotate 0.4s ease-in-out;
+}
+
+.icon-container {
+  display: flex;
+  padding: 0.25rem;
+  border-radius: 1rem;
+}

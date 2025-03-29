@@ -1,0 +1,71 @@
+@use "../../../sass/partials/mixins" as *;
+
+.secondary-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  &.expanded {
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    gap: 0.5rem;
+    min-height: 2.25rem;
+    padding: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.025s ease-in-out,
+      background-color 0.025s ease-in-out, color 0.025s ease-in-out;
+
+    &:hover {
+      background-color: var(--accent-opaque);
+      color: var(--accent);
+    }
+
+    &:active {
+      transform: scale(0.985);
+    }
+
+    &.expanded {
+      align-items: flex-end;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    &.active {
+      background-color: var(--accent);
+      color: var(--base);
+    }
+  }
+
+  &__text {
+    letter-spacing: 0.06rem;
+    line-height: 1.175rem;
+    margin-bottom: 0.125rem;
+    text-wrap: nowrap;
+
+    &.shrunk {
+      display: none;
+    }
+  }
+}
+
+.secondary-icon {
+  @include flex-center;
+  width: 1.75rem;
+  transition: width 0.2s ease-in-out;
+
+  &.expanded {
+    width: 1.5rem;
+    transition: width 0.2s ease-in-out;
+  }
+}

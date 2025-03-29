@@ -1,0 +1,60 @@
+@use "../../../sass/partials/variables" as vars;
+@use "../../../sass/partials/mixins" as *;
+
+.fantasy-tab {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--fantasy-red-opaque);
+  color: var(--fantasy-red);
+  transition: transform 0.0125s ease-in-out, background-color 0.0125s ease,
+    color 0.0125s ease;
+
+  &:active {
+    transform: scale(0.985);
+  }
+
+  &:hover {
+    background-color: var(--fantasy-red);
+    color: var(--light-base);
+  }
+
+  &.expanded {
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  &.active {
+    background-color: var(--fantasy-red);
+    color: var(--light-base);
+  }
+}
+
+.text {
+  letter-spacing: 0.06rem;
+  line-height: 1.175rem;
+  font-size: 1.1rem;
+  text-wrap: nowrap;
+
+  &.shrunk {
+    display: none;
+  }
+}
+
+.icon {
+  @include flex-center;
+  padding-top: 0.125rem;
+
+  &.expanded {
+    width: 1.5rem;
+    transition: width 0.2s ease-in-out;
+    padding-top: 0;
+  }
+}
